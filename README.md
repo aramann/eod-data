@@ -12,7 +12,7 @@
 3. [Installation](#installation-arrow_up)
 4. [Demo](#demo-arrow_up)
 5. [Documentation](#documentation-arrow_up)
-    - [Stock Market Prices, Splits and Dividends Data API](#stock-market-prices-splitsand-dividends-data-api-arrow_up)
+    - [Stock Market Prices, Splits and Dividends Data API](#stock-market-prices-splits-and-dividends-data-api-arrow_up)
     - [Fundamental and Economic Financial Data APIs](#fundamental-and-economic-financial-data-apis-arrow_up)
     - [Exchanges Financial APIs](#exchanges-financial-apis-arrow_up)
     - [Alternative Data Financial API](#alternative-data-financial-api-arrow_up)
