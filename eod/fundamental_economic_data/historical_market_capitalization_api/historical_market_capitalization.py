@@ -8,7 +8,7 @@ class HistoricalMarketCapitalization(RequestHandler):
 
     def get_historical_market_cap(self, symbol: str, **query_params):
         """
-        Get historical data for the requested stock, etf, fund or index.
+        Get historical data for the requested stock.
 
         Parameters
         ----------
