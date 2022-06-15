@@ -91,6 +91,8 @@ while True:
     if sock.is_new_message():  # check if there is a new message
         print(sock.get_message())  # print the message
     time.sleep(0.25)  # wait for 0.25 seconds
+# close socket
+sock.close()
 ```
 
 - **End-Of-Day Historical Stock Market Data API**: Retrieve end-of-day data for Stocks, ETFs, Mutual Funds, Bonds (Government and Corporate), Cryptocurrencies, and FOREX pairs.
