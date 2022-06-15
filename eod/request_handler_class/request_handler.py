@@ -1,6 +1,7 @@
 import requests
 from typing import Dict
 
+
 class RequestHandler():
     def __init__(self, api_key:str, timeout:int):
         # general parameters of the api

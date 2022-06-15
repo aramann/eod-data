@@ -76,13 +76,30 @@ client = EodHistoricalData(api_key)
 ```
 
 ### Stock Market Prices, Splits and Dividends Data API [:arrow_up:](#eod-historical-data-sdk)
+- **Real-Time Data API (WebSockets)**: Get real-time data for us market, forex and crypto
+    - Parameters:
+        - ```endpoint```(str): Required - Name of the api endpoint: ```'us', 'us-quote', 'index', 'forex', 'crypto'```.
+        - ```symbol```(list): Required - Symbols you want to get data on.
+    - Usage:
+```python
+# create socket instance
+sock = client.real_time_data('us', ['AAPL'])
+# connect to socket
+sock.start()
+# receive real-time data
+while True:
+    if sock.is_new_message():  # check if there is a new message
+        print(sock.get_message())  # print the message
+    time.sleep(0.25)  # wait for 0.25 seconds
+```
+
 - **End-Of-Day Historical Stock Market Data API**: Retrieve end-of-day data for Stocks, ETFs, Mutual Funds, Bonds (Government and Corporate), Cryptocurrencies, and FOREX pairs.
-	- Parameters:
-		- ```symbol```(str): Required - Name of the instrument to retrieve data.
-		- ```period```(str): Optional - Use ```'d'``` for daily, ```'w'``` for weekly, ```'m'``` for monthly prices. By default, daily prices will be shown.
-		- ```order```(str): Optional - Use ```'a'``` for ascending dates (from old to new), ```'d'``` for descending dates (from new to old). By default, dates are shown in ascending order.
-		- ```from_```(str) and ```to```(str): Optional - The format is 'YYYY-MM-DD'. If you need data from Jan 5, 2017, to Feb 10, 2017, you should use ```from_='2017-01-05'``` and ```to='2017-02-10'```
-	- Usage:
+    - Parameters:
+        - ```symbol```(str): Required - Name of the instrument to retrieve data.
+        - ```period```(str): Optional - Use ```'d'``` for daily, ```'w'``` for weekly, ```'m'``` for monthly prices. By default, daily prices will be shown.
+        - ```order```(str): Optional - Use ```'a'``` for ascending dates (from old to new), ```'d'``` for descending dates (from new to old). By default, dates are shown in ascending order.
+        - ```from_```(str) and ```to```(str): Optional - The format is 'YYYY-MM-DD'. If you need data from Jan 5, 2017, to Feb 10, 2017, you should use ```from_='2017-01-05'``` and ```to='2017-02-10'```
+    - Usage:
 ```python
 # AngloAmerican stock that trades in the London Stock Exchange
 resp = client.get_prices_eod('AAL.LSE', period='d', order='a', from_='2017-01-05')
